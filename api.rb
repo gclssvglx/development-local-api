@@ -5,7 +5,7 @@ before do
   content_type :json
 end
 
-get "/find-local-council.json" do
+get "/find-local-council/query.json" do
   return invalid_postcode_response if postcode_invalid(params["postcode"])
 
   return postcode_not_found_response unless postcode_found(params["postcode"])

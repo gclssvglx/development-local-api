@@ -5,21 +5,21 @@ The API takes a postcode and satisfies the following use cases where a postcode 
 
 ## Example 1 - Simple case
 
-`GET /find-local-council.json?postcode=E18QS`
+`GET /find-local-council/query.json?postcode=E18QS`
 
 A single council is returned (ie services are all supplied by a single unitary body) - [Response](/response/tower-hamlets.json)
 
 
 ## Example 2 - Two-tier postcode is supplied
 
-`GET /find-local-council.json?postcode=DE451QW`
+`GET /find-local-council/query.json?postcode=DE451QW`
 
 Two councils are returned (ie services are spread across district and county authorities) - [Response](/response/derbyshire-dales.json)
 
 
 ## Example 3 - Ambiguous postcode is supplied
 
-`GET /find-local-council.json?postcode=BH228UB`
+`GET /find-local-council/query.json?postcode=BH228UB`
 
 A list of addresses is returned - the user needs to choose an address to get the result - [Response](/response/addresses.json)
 
@@ -71,13 +71,13 @@ Once running, you can test the API in your browser, using `curl` or via the supp
 
 ### Browser links
 
-- http://localhost:4567/find-local-council.json?postcode=E18QS
-- http://localhost:4567/find-local-council.json?postcode=DE451QW
-- http://localhost:4567/find-local-council.json?postcode=BH228UB
+- http://localhost:4567/find-local-council/query.json?postcode=E18QS
+- http://localhost:4567/find-local-council/query.json?postcode=DE451QW
+- http://localhost:4567/find-local-council/query.json?postcode=BH228UB
 - http://localhost:4567/find-local-council/dorset.json
 - http://localhost:4567/find-local-council/bournemouth-christchurch-poole.json
-- http://localhost:4567/find-local-council.json?postcode=SW1
-- http://localhost:4567/find-local-council.json?postcode=SW1A1AA
+- http://localhost:4567/find-local-council/query.json?postcode=SW1
+- http://localhost:4567/find-local-council/query.json?postcode=SW1A1AA
 
 
 ### `cURL` commands
@@ -86,13 +86,13 @@ You'll probably want to use [jq](https://jqlang.org/) to format the JSON output 
 
 
 ```shell
-curl -G -d "postcode=E18QS" http://localhost:4567/find-local-council.json | jq
-curl -G -d "postcode=DE451QW" http://localhost:4567/find-local-council.json | jq
-curl -G -d "postcode=BH228UB" http://localhost:4567/find-local-council.json | jq
+curl -G -L -d "postcode=E18QS" http://localhost:4567/find-local-council/query.json | jq
+curl -G -L -d "postcode=DE451QW" http://localhost:4567/find-local-council/query.json | jq
+curl -G -L -d "postcode=BH228UB" http://localhost:4567/find-local-council/query.json | jq
 curl -G http://localhost:4567/find-local-council/dorset.json | jq
 curl -G http://localhost:4567/find-local-council/bournemouth-christchurch-poole.json | jq
-curl -G -d "postcode=SW1" http://localhost:4567/find-local-council.json | jq
-curl -G -d "postcode=SW1A1AA" http://localhost:4567/find-local-council.json | jq
+curl -G -L -d "postcode=SW1" http://localhost:4567/find-local-council/query.json | jq
+curl -G -L -d "postcode=SW1A1AA" http://localhost:4567/find-local-council/query.json | jq
 ```
 
 

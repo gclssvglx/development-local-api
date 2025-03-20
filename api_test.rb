@@ -5,7 +5,7 @@ require "json"
 class APITest < Minitest::Test
   def test_simple_response
     response = Faraday.get(
-      "http://localhost:4567/find-local-council.json?postcode=E18QS",
+      "http://localhost:4567/find-local-council/query.json?postcode=E18QS",
       { "Content-Type" => "application/json" }
     )
 
@@ -15,7 +15,7 @@ class APITest < Minitest::Test
 
   def test_two_tier_response
     response = Faraday.get(
-      "http://localhost:4567/find-local-council.json?postcode=DE451QW",
+      "http://localhost:4567/find-local-council/query.json?postcode=DE451QW",
       { "Content-Type" => "application/json" }
     )
 
@@ -25,7 +25,7 @@ class APITest < Minitest::Test
 
   def test_ambiguous_postcode_response
     response = Faraday.get(
-      "http://localhost:4567/find-local-council.json?postcode=BH228UB",
+      "http://localhost:4567/find-local-council/query.json?postcode=BH228UB",
       { "Content-Type" => "application/json" }
     )
 
@@ -55,7 +55,7 @@ class APITest < Minitest::Test
 
   def test_invalid_postcode
     response = Faraday.get(
-      "http://localhost:4567/find-local-council.json?postcode=SW1",
+      "http://localhost:4567/find-local-council/query.json?postcode=SW1",
       { "Content-Type" => "application/json" }
     )
 
@@ -65,7 +65,7 @@ class APITest < Minitest::Test
 
   def test_postcode_not_found
     response = Faraday.get(
-      "http://localhost:4567/find-local-council.json?postcode=SW1A1AA",
+      "http://localhost:4567/find-local-council/query.json?postcode=SW1A1AA",
       { "Content-Type" => "application/json" }
     )
 

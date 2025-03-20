@@ -1,0 +1,14 @@
+{
+  "addresses": [
+    {
+      "address": "APPLETREE COTTAGE, BARRACK ROAD, WEST PARLEY, FERNDOWN, BH22 8UB",
+      "slug": "dorset",
+      "name": "Dorset County Council"
+    },
+    {
+      "address": "LONGCROFT BRICK, BARRACK ROAD, FERNDOWN, DORSET, BH22 8UB",
+      "slug": "bournemouth-christchurch-poole",
+      "name": "Bournemouth, Christchurch, and Poole"
+    }
+  ]
+}

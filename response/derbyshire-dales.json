@@ -1,0 +1,15 @@
+{
+  "local_authority": {
+    "name": "Derbyshire Dales District Council",
+    "homepage_url": "https://www.derbyshiredales.gov.uk/",
+    "tier": "district",
+    "slug": "derbyshire-dales",
+    "parent": {
+      "name": "Derbyshire County Council",
+      "homepage_url": "https://www.derbyshiredales.gov.uk/",
+      "tier": "county",
+      "slug": "derbyshire",
+      "parent": null
+    }
+  }
+}

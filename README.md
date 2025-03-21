@@ -86,13 +86,13 @@ You'll probably want to use [jq](https://jqlang.org/) to format the JSON output 
 
 
 ```shell
-curl -G -L -d "postcode=E18QS" http://localhost:4567/find-local-council/query.json | jq
-curl -G -L -d "postcode=DE451QW" http://localhost:4567/find-local-council/query.json | jq
-curl -G -L -d "postcode=BH228UB" http://localhost:4567/find-local-council/query.json | jq
+curl -GL -d "postcode=E18QS" http://localhost:4567/find-local-council/query.json | jq
+curl -GL -d "postcode=DE451QW" http://localhost:4567/find-local-council/query.json | jq
+curl -GL -d "postcode=BH228UB" http://localhost:4567/find-local-council/query.json | jq
 curl -G http://localhost:4567/find-local-council/dorset.json | jq
 curl -G http://localhost:4567/find-local-council/bournemouth-christchurch-poole.json | jq
-curl -G -L -d "postcode=SW1" http://localhost:4567/find-local-council/query.json | jq
-curl -G -L -d "postcode=SW1A1AA" http://localhost:4567/find-local-council/query.json | jq
+curl -GL -d "postcode=SW1" http://localhost:4567/find-local-council/query.json | jq
+curl -GL -d "postcode=SW1A1AA" http://localhost:4567/find-local-council/query.json | jq
 ```
 
 

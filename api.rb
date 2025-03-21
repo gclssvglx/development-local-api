@@ -12,8 +12,7 @@ get "/find-local-council/query.json" do
 
   response_filename = postcode_to_response[params["postcode"]]
 
-  status 200
-  body File.read("response/#{response_filename}.json")
+  redirect "/find-local-council/#{response_filename}.json"
 end
 
 get "/find-local-council/:slug" do

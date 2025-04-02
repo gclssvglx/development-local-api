@@ -3,6 +3,7 @@
     "name": "Bournemouth, Christchurch, and Poole",
     "homepage_url": "https://www.bcpcouncil.gov.uk/",
     "tier": "unitary",
-    "slug": "bournemouth-christchurch-poole"
+    "slug": "bournemouth-christchurch-poole",
+    "parent": null
   }
 }

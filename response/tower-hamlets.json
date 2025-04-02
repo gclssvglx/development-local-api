@@ -3,6 +3,7 @@
     "name": "London Borough of Tower Hamlets",
     "homepage_url": "https://www.towerhamlets.gov.uk",
     "tier": "unitary",
-    "slug": "tower-hamlets"
+    "slug": "tower-hamlets",
+    "parent": null
   }
 }

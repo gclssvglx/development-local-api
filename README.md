@@ -34,7 +34,7 @@ On choosing an address from the list in Example 3, a follow-up API is required t
 
 ## Invalid postcode
 
-In the event of an invalid postcode, the following `404` response is returned...
+In the event of an invalid postcode, the following `400` response is returned...
 
 ```json
 { "message": "Invalid postcode" }

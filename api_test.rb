@@ -65,7 +65,7 @@ class APITest < Minitest::Test
       { "Content-Type" => "application/json" }
     )
 
-    assert_equal 404, response.status
+    assert_equal 400, response.status
     assert_equal "{\"message\":\"Invalid postcode\"}", response.body
   end
 

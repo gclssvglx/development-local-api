@@ -26,7 +26,7 @@ def postcode_not_found_response
 end
 
 def invalid_postcode_response
-  status 404
+  status 400
   body "{\"message\":\"Invalid postcode\"}"
 end
 

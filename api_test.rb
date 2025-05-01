@@ -78,4 +78,14 @@ class APITest < Minitest::Test
     assert_equal 404, response.status
     assert_equal "{\"message\":\"Postcode not found\"}", response.body
   end
+
+  def test_rate_limit
+    response = Faraday.get(
+      "http://localhost:4567/find-local-council/query.json?postcode=SW1A2AB",
+      { "Content-Type" => "application/json" }
+    )
+
+    assert_equal 429, response.status
+    assert_equal "{\"message\":\"Too many requests\"}", response.body
+  end
 end

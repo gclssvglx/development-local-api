@@ -48,3 +48,12 @@ In the event of a postcode that cannot be found, the following `404` response is
 ```json
 { "message": "Postcode not found" }
 ```
+
+
+## Rate limiting
+
+In the event of a postcode that is `SW1A2AB`, the following `429` response is returned...
+
+```json
+{ "message": "Too many requests" }
+```

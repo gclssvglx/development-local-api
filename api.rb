@@ -6,6 +6,8 @@ before do
 end
 
 get "/find-local-council/query.json" do
+  return rate_limit_response if params["postcode"] == "SW1A2AB"
+
   return invalid_postcode_response if postcode_invalid(params["postcode"])
 
   return postcode_not_found_response unless postcode_found(params["postcode"])
@@ -28,6 +30,11 @@ end
 def invalid_postcode_response
   status 400
   body "{\"message\":\"Invalid postcode\"}"
+end
+
+def rate_limit_response
+  status 429
+  body "{\"message\":\"Too many requests\"}"
 end
 
 def postcode_invalid(postcode)
